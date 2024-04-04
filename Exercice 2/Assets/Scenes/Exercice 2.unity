@@ -335,6 +335,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 506335542}
+  gameOverMenu: Fail Menu
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
