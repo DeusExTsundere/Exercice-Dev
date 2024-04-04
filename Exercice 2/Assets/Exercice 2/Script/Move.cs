@@ -17,6 +17,7 @@ public class Move : MonoBehaviour
         {
             rb.AddForce(transform.up * jumpForce);
             jumpReset = false;
+            Debug.Log("Jump");
         }
 
     }
@@ -26,6 +27,7 @@ public class Move : MonoBehaviour
         if (collision.gameObject.tag == ("Sol"))
         {
             jumpReset = true;
+            Debug.Log("Reset");
         }
     }
 
