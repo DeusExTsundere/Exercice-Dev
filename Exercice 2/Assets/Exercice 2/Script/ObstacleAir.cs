@@ -9,8 +9,6 @@ public class ObstacleAir : MonoBehaviour
     [SerializeField] private GameObject trap2 = null;
     [SerializeField] private int tempsSpawn = 10;
     [SerializeField] private Transform lieuSpawn = null;
-    private float z_position = -0.5f;
-    private GameObject trap = null;
     private float timer = 0;
     private int nbSpawn = 0;
 

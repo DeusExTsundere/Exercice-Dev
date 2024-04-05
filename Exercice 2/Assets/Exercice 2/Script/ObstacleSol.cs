@@ -9,10 +9,8 @@ public class ObstacleSol : MonoBehaviour
     [SerializeField] private GameObject trap1 = null;
     [SerializeField] private GameObject trap2 = null;
     [SerializeField] private GameObject trap3 = null;
-    [SerializeField] private int tempsSpawn=5;
-    [SerializeField] private Transform lieuSpawn = null;
-    private GameObject trap = null;
-    private float z_position = -0.5f;
+    [SerializeField] private int tempsSpawn=2;
+    [SerializeField] private Transform lieuSpawn;
     private float timer = 0;
     private int nbSpawn = 0;
 
