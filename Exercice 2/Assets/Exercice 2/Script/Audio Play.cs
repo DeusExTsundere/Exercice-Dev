@@ -6,8 +6,20 @@ public class Audioplay : MonoBehaviour
 {
     [Header("Réglage Audio")]
     [SerializeField] private AudioSource catDeath;
-    void Start()
+    [SerializeField] private ScriptableEvent playSoundDeath;
+
+    private void OnEnable()
+    {
+        playSoundDeath.PlaySoundAction += PlaySound;
+    }
+
+    private void PlaySound()
     {
         catDeath.Play();
+    }
+
+    private void OnDisable()
+    {
+        playSoundDeath.PlaySoundAction -= PlaySound;
     }
 }

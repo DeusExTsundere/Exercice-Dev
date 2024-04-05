@@ -6,24 +6,23 @@ using UnityEngine.TextCore.Text;
 
 public class Collision : MonoBehaviour
 {
+    [Header("Joueur")]
     [SerializeField] private GameObject player;
-    public AudioSource catDeath;
-    [Header("Réglage des scènes")]
-    [SerializeField] private string gameOverMenu;
-
-    private void OnEnable()
-    {
-        catDeath = GetComponent<AudioSource>();
-        catDeath.Pause();
-    }
+    [Header("Réglage objet")]
+    [SerializeField] private GameObject failMenu;
+    [SerializeField] private GameObject trapAir;
+    [SerializeField] private GameObject trapSol;
+    [Header("Réglage son")]
+    [SerializeField] private AudioSource catSong;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == ("Obstacle"))
         {
-            catDeath.UnPause();
+            failMenu.SetActive(true);
             Destroy(player);
-            SceneManager.LoadScene(gameOverMenu,LoadSceneMode.Single);
+            Destroy(trapAir);
+            Destroy(trapSol);
         }
     }
 }

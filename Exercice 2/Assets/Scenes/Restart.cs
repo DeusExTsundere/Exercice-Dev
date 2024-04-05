@@ -5,10 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class Restart : MonoBehaviour
 {
-    [SerializeField] private string restart;
-
     public void ButtonOnClick()
     {
-        SceneManager.LoadScene(restart, LoadSceneMode.Single);
+        string currentScene = SceneManager.GetActiveScene().name;
+        SceneManager.LoadScene(currentScene);
     }
 }
