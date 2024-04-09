@@ -5,7 +5,6 @@ using UnityEngine.UIElements;
 
 public class ObstacleSol : MonoBehaviour
 {
-    [SerializeField] private GameObject spawn = null;
     [SerializeField] private GameObject trap1 = null;
     [SerializeField] private int tempsSpawn=2;
     [SerializeField] private Transform lieuSpawn;
@@ -29,10 +28,5 @@ public class ObstacleSol : MonoBehaviour
     {
         Instantiate(trap1 , lieuSpawn.transform);
         timer = Random.Range(0,5);
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        Destroy(spawn);
     }
 }
