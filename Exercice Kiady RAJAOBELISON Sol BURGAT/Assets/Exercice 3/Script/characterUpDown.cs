@@ -8,6 +8,9 @@ public class characterUpDown : MonoBehaviour
     private characterControler characterControler;
     private KeyCode keyUp;
     private KeyCode keyDown;
+    private float limiteYDown = 0.5f;
+    private float limiteYUp = 9.5f;
+    private float _currentPosition;
     private void Awake()
     {
         characterControler = GetComponent<characterControler>();
@@ -23,11 +26,12 @@ public class characterUpDown : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(keyDown))
+        _currentPosition = transform.position.y;
+        if (Input.GetKey(keyDown) && _currentPosition >= limiteYDown)
         {
             moveDown();
         }
-        else if (Input.GetKey(keyUp))
+        else if (Input.GetKey(keyUp) && _currentPosition <= limiteYUp)
         {
             moveUp();
         }
